@@ -1,7 +1,7 @@
 const usermodel = require('../Models/userModel');
 const jwt=require('jsonwebtoken');
 // const {sendEmail}=require('../nodemailer')
-require('dotenv').config
+require('dotenv').config();
 const sendEmail=require('../emailsend')
 
 exports.signup = async (req, res) => {
@@ -219,7 +219,7 @@ console.log("userEmail",email);
 
 exports.verifyOtp = async (req, res) => {
   try {
-    const { otp } = req.body.otp;
+    const  otp  = req.body.otp;
     console.log("otp",otp);
 
     if (!otp) {
