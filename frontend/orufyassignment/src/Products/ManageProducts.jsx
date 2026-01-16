@@ -57,7 +57,7 @@ const debounceSearch=useDebouncee(search)
     
     if (imageToRemove._id) {
       try {
-        const res = await axios.delete(` https://orufy-tech-backend-e4zy.onrender.com/products/deleteimg/${imageToRemove._id}`,{headers:{Authorization:`Bearer ${Token}`}});
+        const res = await axios.delete(` https://orufytechassignmentbackend.onrender.com/products/deleteimg/${imageToRemove._id}`,{headers:{Authorization:`Bearer ${Token}`}});
         console.log(res.data.message);
         toast.success(res.data.message);
       } catch (error) {
@@ -91,7 +91,7 @@ const debounceSearch=useDebouncee(search)
 
   const toggleProduct = async (id) => {
     try {
-      const res = await axios.put(` https://orufy-tech-backend-e4zy.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
+      const res = await axios.put(` https://orufytechassignmentbackend.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
       toast.success(res.data.message)
       fetchallProducts();
     } catch (error) {
@@ -102,7 +102,7 @@ const debounceSearch=useDebouncee(search)
 
   const fetchallProducts = async () => {
     try {
-      const res = await axios.get(' https://orufy-tech-backend-e4zy.onrender.com/products/getallproduct',{headers:{Authorization:`Bearer ${Token}`}})
+      const res = await axios.get(' https://orufytechassignmentbackend.onrender.com/products/getallproduct',{headers:{Authorization:`Bearer ${Token}`}})
       console.log(res.data.data);
       setProducts(res.data.data)
     } catch (error) {
@@ -169,7 +169,7 @@ const debounceSearch=useDebouncee(search)
       });
   
       const res = await axios.post(
-        " https://orufy-tech-backend-e4zy.onrender.com/products/addproduct",
+        " https://orufytechassignmentbackend.onrender.com/products/addproduct",
         formData,{headers:{Authorization:`Bearer ${Token}`}}
       );
   
@@ -212,7 +212,7 @@ const debounceSearch=useDebouncee(search)
       formData.append("existingImages", JSON.stringify(remainingExistingImages));
       
       const res = await axios.put(
-        ` https://orufy-tech-backend-e4zy.onrender.com/products/editProduct/${editingProduct._id}`,
+        ` https://orufytechassignmentbackend.onrender.com/products/editProduct/${editingProduct._id}`,
         formData,{headers:{Authorization:`Bearer ${Token}`}}
       );
       
@@ -233,7 +233,7 @@ const debounceSearch=useDebouncee(search)
   const deleteProduct = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        const res = await axios.delete(` https://orufy-tech-backend-e4zy.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}});
+        const res = await axios.delete(` https://orufytechassignmentbackend.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}});
         toast.success(res.data.message);
         fetchallProducts();
       } catch (error) {

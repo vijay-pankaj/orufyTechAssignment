@@ -11,7 +11,7 @@ const Published = () => {
 
   const unpublishProduct=async(id)=>{
     try {
-      const res=await axios.put(` https://orufy-tech-backend-e4zy.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
+      const res=await axios.put(` https://orufytechassignmentbackend.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
     toast.success(res.data.message)
     fetchPublishedProducts()
     } catch (error) {
@@ -22,7 +22,7 @@ const Published = () => {
 
   const fetchPublishedProducts=async()=>{
     try {
-      const res=await axios.get(' https://orufy-tech-backend-e4zy.onrender.com/products/published',{headers:{Authorization:`Bearer ${Token}`}})
+      const res=await axios.get(' https://orufytechassignmentbackend.onrender.com/products/published',{headers:{Authorization:`Bearer ${Token}`}})
     console.log(res.data.data);
     setProducts(res.data.data)
     } catch (error) {
@@ -36,7 +36,7 @@ const Published = () => {
 
   const deleteProduct=async(id)=>{
    try {
-    const res=await axios.delete(` https://orufy-tech-backend-e4zy.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}})
+    const res=await axios.delete(` https://orufytechassignmentbackend.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}})
     toast.success(res?.data?.message||"Product deleted!")
    } catch (error) {
     console.log(error);

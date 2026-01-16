@@ -87,7 +87,7 @@ const Login = () => {
     console.log("Login data:", loginData.email);
 
     const res = await axios.post(
-      " https://orufy-tech-backend-e4zy.onrender.com/user/login",
+      " https://orufytechassignmentbackend.onrender.com/user/login",
       loginData
     );
 
@@ -112,7 +112,7 @@ const handleOtpSubmit = async (e) => {
 
   try {
     const res = await axios.post(
-      ' https://orufy-tech-backend-e4zy.onrender.com/user/verifyotp',
+      ' https://orufytechassignmentbackend.onrender.com/user/verifyotp',
       { otp: otpData },
       {
         headers: {
@@ -140,7 +140,7 @@ const handleOtpSubmit = async (e) => {
     setloading(true)
     e.preventDefault();
     try {
-      const res = await axios.post(" https://orufy-tech-backend-e4zy.onrender.com/user/signup", signupData);
+      const res = await axios.post(" https://orufytechassignmentbackend.onrender.com/user/signup", signupData);
       toast.success(res.data.message);
       setSignupForm(false);
       setloginform(true);
@@ -158,7 +158,7 @@ const handleOtpSubmit = async (e) => {
 
   try {
     const res = await axios.post(
-      ' https://orufy-tech-backend-e4zy.onrender.com/user/resendOtp',
+      ' https://orufytechassignmentbackend.onrender.com/user/resendOtp',
       {},
       {
         headers: {

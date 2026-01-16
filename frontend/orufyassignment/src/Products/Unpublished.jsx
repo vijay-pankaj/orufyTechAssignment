@@ -9,7 +9,7 @@ const Unpublished = () => {
   const Token=localStorage.getItem('authToken')
   const publishProduct=async(id)=>{
     try {
-      const res=await axios.put(` https://orufy-tech-backend-e4zy.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
+      const res=await axios.put(` https://orufytechassignmentbackend.onrender.com/products/toggle/${id}`,{},{headers:{Authorization:`Bearer ${Token}`}})
     toast.success(res.data.message)
     fetchProducts();
     } catch (error) {
@@ -21,7 +21,7 @@ const Unpublished = () => {
   // Fetch unpublished products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(' https://orufy-tech-backend-e4zy.onrender.com/products/unpublished',{headers:{Authorization:`Bearer ${Token}`}});
+      const res = await axios.get(' https://orufytechassignmentbackend.onrender.com/products/unpublished',{headers:{Authorization:`Bearer ${Token}`}});
       console.log(res.data.data);
       toast.success(res?.data?.message);
       setProducts(res.data.data);
@@ -37,7 +37,7 @@ const Unpublished = () => {
 
   const deleteProduct=async(id)=>{
     try {
-     const res=await axios.delete(` https://orufy-tech-backend-e4zy.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}})
+     const res=await axios.delete(` https://orufytechassignmentbackend.onrender.com/products/deleteproduct/${id}`,{headers:{Authorization:`Bearer ${Token}`}})
      toast.success(res?.data?.message||"Product deleted!")
     } catch (error) {
      console.log(error);
