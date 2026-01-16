@@ -119,7 +119,13 @@ exports.loginWithOtp = async (req, res) => {
       </div>
     `;
 
-    await sendEmail(email, subject, textmsg, htmlpage);
+    // await sendEmail(email, subject, textmsg, htmlpage);
+    await sendEmail({
+  to: email,
+  subject: subject,
+  text: textmsg,
+  html: htmlpage,
+});
 
     return res.status(200).json({
       success: true,
@@ -190,7 +196,13 @@ console.log("userEmail",email);
         </div>
       </div>
     `;
-    await sendEmail(email, subject, textmsg, htmlpage);
+    // await sendEmail(email, subject, textmsg, htmlpage);
+    await sendEmail({
+  to: email,
+  subject: subject,
+  text: textmsg,
+  html: htmlpage,
+});
     return res.status(200).json({
       success: true,
       message: "OTP resent successfully"
