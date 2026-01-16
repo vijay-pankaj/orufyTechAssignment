@@ -2,6 +2,7 @@ const usermodel = require('../Models/userModel');
 const jwt=require('jsonwebtoken');
 // const {sendEmail}=require('../nodemailer')
 require('dotenv').config();
+
 const sendEmail=require('../emailsend')
 
 exports.signup = async (req, res) => {
@@ -69,7 +70,8 @@ exports.loginWithOtp = async (req, res) => {
       });
     }
 
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    // const otp = Math.floor(100000 + Math.random() * 900000);
+const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
     const expiryTime = new Date(Date.now() + 5 * 60 * 1000);
 
@@ -161,7 +163,8 @@ exports.resendOtp = async (req, res) => {
 const email=user.email;
 console.log("userEmail",email);
 
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
 
     const expiryTime = new Date(Date.now() + 5 * 60 * 1000);
 
@@ -219,7 +222,8 @@ console.log("userEmail",email);
 
 exports.verifyOtp = async (req, res) => {
   try {
-    const  {otp}  = req.body.otp;
+    const otp = req.body.otp;
+
     console.log("otp",otp);
 
     if (!otp) {
@@ -236,7 +240,7 @@ exports.verifyOtp = async (req, res) => {
       return res.status(404).json({ success: false, message: "User not found" });
     }
 
-    if (!user.otp || user.otp.currentOtp !== Number(otp)) {
+    if (!user.otp || user.otp.currentOtp !== otp) {
       return res.status(400).json({ success: false, message: "Invalid OTP" });
     }
 
@@ -250,7 +254,8 @@ exports.verifyOtp = async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    user.otp = { currentOtp: 0, timeDuration: null };
+   user.otp = { currentOtp: "", timeDuration: null };
+
     await user.save();
 
     return res.status(200).json({

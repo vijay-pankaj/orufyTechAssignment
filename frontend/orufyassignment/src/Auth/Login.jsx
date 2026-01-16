@@ -113,7 +113,7 @@ const handleOtpSubmit = async (e) => {
   try {
     const res = await axios.post(
       ' https://orufytechassignmentbackend.onrender.com/user/verifyotp',
-      { otp: otpData },
+      { otp: otpData.otp },
       {
         headers: {
           Authorization: `Bearer ${token}`

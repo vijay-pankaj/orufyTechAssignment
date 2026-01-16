@@ -24,14 +24,15 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   otp: {
-    currentOtp: {
-      type: Number,
-      default: 0
-    },
-    timeDuration: {
-      type: Date,
-    }
+  currentOtp: {
+    type: String,
+    default: ""
+  },
+  timeDuration: {
+    type: Date,
   }
+}
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("orufyuser", userSchema);
