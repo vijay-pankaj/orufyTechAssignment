@@ -219,7 +219,7 @@ console.log("userEmail",email);
 
 exports.verifyOtp = async (req, res) => {
   try {
-    const  otp  = req.body.otp;
+    const  {otp}  = req.body.otp;
     console.log("otp",otp);
 
     if (!otp) {
