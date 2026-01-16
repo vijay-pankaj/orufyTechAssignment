@@ -1,0 +1,39 @@
+.home-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.products{
+  margin-top: 24px;
+  height: 33px;
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid gray;
+}
+.published{
+  margin-left: 32px;
+  cursor: pointer;
+  
+}
+
+.published,
+.unpublished {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.unpublished:hover,
+.published.active,
+.unpublished.active {
+  text-decoration: underline solid #0B99FF 2px;
+  cursor: pointer;
+  text-underline-offset: 17px;
+}

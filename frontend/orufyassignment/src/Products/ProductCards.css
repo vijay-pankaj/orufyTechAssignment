@@ -1,0 +1,166 @@
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+  }
+  
+  .productCard {
+    margin-top: 16px;
+    background: #fff;
+    border-radius: 12px;
+    height:509px;
+    width:363px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .imageWrapper {
+    width: 331px;
+    height: 197px;
+    border: 1px solid #DCDFE3;
+    background: #f6f6f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imageWrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .productName {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .details p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin: 4px 0;
+    color: #333;
+  }
+  .details{
+    height: 192px;
+    width: 331px;
+    padding-top: 8px;
+  }
+  
+  .details span {
+    color: #777;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  .publishBtn {
+    flex: 1;
+   background: linear-gradient(180deg, #000FB4 13.75%, #4050FF 135%);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+.unpublishBtn{
+  flex: 1;
+  background: linear-gradient(180deg, #52D407 13.75%, #37C100 135%);
+ color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  
+  .editBtn {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .deleteBtn {
+    width: 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+
+@media (max-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .productCard {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 180px;
+  }
+
+  .details {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .productCard {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .imageWrapper {
+    height: 160px;
+  }
+
+  .productName {
+    font-size: 15px;
+  }
+
+  .details p {
+    font-size: 12px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  .publishBtn,
+  .unpublishBtn,
+  .editBtn {
+    flex: 1 1 100%;
+  }
+
+  .deleteBtn {
+    width: 100%;
+  }
+}
+
+
+
+
